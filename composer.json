@@ -1,6 +1,8 @@
 {
     "name": "neyric/php-qonto",
     "description": "Qonto API client for PHP",
+    "keywords": ["qonto"],
+    "homepage": "https://github.com/neyric/php-qonto",
     "type": "library",
     "require": {
         "php": "^7.1",

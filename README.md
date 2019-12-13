@@ -12,6 +12,14 @@ To use this SDK, you will need (as a minimum):
 * A working Qonto Account
 
 
+Installation with Composer
+-------------------------------------------------
+You can use neyric/php-qonto library as a dependency in your project with [Composer](https://getcomposer.org/) (which is the preferred technique). Follow [these installation instructions](https://getcomposer.org/doc/00-intro.md) if you do not already have Composer installed.
+A composer.json file is available in the repository and it has been referenced from [Packagist](https://packagist.org/packages/neyric/php-qonto). 
+
+    you@yourhost:/path/to/your-project$ composer require neyric/php-qonto
+    
+
 License
 -------------------------------------------------
 neyric/php-qonto is distributed under MIT license, see the [LICENSE file](https://github.com/neyric/php-qonto/blob/master/LICENSE).
