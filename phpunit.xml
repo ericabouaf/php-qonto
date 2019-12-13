@@ -4,4 +4,10 @@
             <directory>tests/cases/</directory>
         </testsuite>
     </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./Qonto</directory>
+        </whitelist>
+    </filter>
 </phpunit>
