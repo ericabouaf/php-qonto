@@ -8,7 +8,7 @@ class ApiClient
 {
     private $baseUrl;
 
-    private $httpClient;
+    public $httpClient; // public to be easily overriden in tests
 
     /**
      * ApiClient constructor
