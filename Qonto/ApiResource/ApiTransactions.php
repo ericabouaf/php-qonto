@@ -16,16 +16,7 @@ class ApiTransactions extends ApiResource
      */
     public function list(string $slug, string $iban)
     {
-        // TODO: optional filters
-        // status
-        // updated_at_from
-        // updated_at_to
-        // settled_at_from
-        // settled_at_to
-        // sort_by
-        // current_page
-        // per_page
-
+        // TODO: optional filters (Cf https://api-doc.qonto.eu/2.0/transactions/list-transactions)
 
         $data = $this->fetch('/transactions', [
             'slug' => $slug,

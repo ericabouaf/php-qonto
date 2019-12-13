@@ -14,7 +14,7 @@ class Transaction
     /**
      * Amount of the transaction, in euros
      *
-     * @var float
+     * @var float|int
      */
     public $amount;
 
@@ -35,7 +35,7 @@ class Transaction
     /**
      * Amount in the local_currency
      *
-     * @var float
+     * @var float|int
      */
     public $local_amount;
 
@@ -127,7 +127,7 @@ class Transaction
     /**
      * Amount of VAT filled in on the transaction, in euros
      * 
-     * @var float|null
+     * @var float|int|null
      */
     public $vat_amount;
 
@@ -141,7 +141,7 @@ class Transaction
     /**
      * Allowed Values: -1, 0, 2.1, 5.5, 10, 20
      * 
-     * @var float|null
+     * @var float|int|null
      */
     public $vat_rate;
 
