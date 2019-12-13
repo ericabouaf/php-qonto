@@ -1,0 +1,39 @@
+{
+    "name": "neyric/php-qonto",
+    "description": "Qonto API client for PHP",
+    "type": "library",
+    "require": {
+        "php": "^7.1",
+        "symfony/http-client": "^4.3",
+        "symfony/serializer": "^4.3",
+        "symfony/property-access": "^4.3",
+        "phpdocumentor/reflection-docblock": "^4.3",
+        "symfony/property-info": "^4.3"
+    },
+    "autoload": {
+        "psr-4": {
+          "neyric\\Qonto\\": "Qonto/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+          "neyric\\Qonto\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "phpstan/phpstan": "^0.11.19"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "phpstan": "phpstan analyse Qonto tests --level 7"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eric Abouaf",
+            "email": "eric.abouaf@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
