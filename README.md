@@ -53,6 +53,19 @@ var_dump($organization);
 $transactionCollection = $qonto->Transactions->list('bank-account-slug', 'FR76XXXXXXXXXXXXXXXXXXXXXXX');
 var_dump($transactionCollection);
 
+// Fetch the list of transactions with filters
+use neyric\Qonto\Model\TransactionFilterBuilder;
+
+$filters = TransactionFilterBuilder::create()
+            ->status("completed")
+            ->side("credit")
+            ->updatedAtFrom("2019-01-10T11:47:53.123Z")
+            ->updatedAtTo("2021-01-10T11:47:53.123Z")
+            ->attachments();
+
+$transactionCollection = $qonto->Transactions->listFilter('bank-account-slug', 'FR76XXXXXXXXXXXXXXXXXXXXXXX', $filters);
+var_dump($transactionCollection);
+
 // Fetch memberships
 $memberships = $qonto->Memberships->list();
 var_dump($memberships);

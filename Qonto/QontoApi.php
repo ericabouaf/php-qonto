@@ -55,7 +55,7 @@ class QontoApi
     public $Transactions;
 
 
-    public function __construct($login, $secretKey, $baseUrl = 'https://thirdparty.qonto.eu/v2') {
+    public function __construct($login, $secretKey, $baseUrl = 'https://thirdparty.qonto.com/v2') {
         $this->login  = $login;
         $this->secretKey = $secretKey;
         $this->baseUrl = $baseUrl;
