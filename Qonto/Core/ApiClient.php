@@ -2,6 +2,7 @@
 
 namespace neyric\Qonto\Core;
 
+use neyric\Qonto\Utils\UUIDUtils;
 use Symfony\Component\HttpClient\HttpClient;
 
 class ApiClient
@@ -19,7 +20,9 @@ class ApiClient
 
         $this->httpClient = HttpClient::create([
             'headers' => [
-                'Authorization' => self::getAuthorizationValue($login, $secretKey)
+                'Authorization' => self::getAuthorizationValue($login, $secretKey),
+                'Content-Type' => 'application/json',
+                'X-Qonto-Idempotency-Key' => UUIDUtils::v4()
             ]
         ]);
     }
@@ -29,6 +32,12 @@ class ApiClient
     {
         return $this->httpClient->request('GET', $url, [
             'query' => $queryParameters
+        ]);
+    }
+
+    public function getRequestPOST($url, $body_parameters){
+        return $this->httpClient->request('POST', $url, [
+            'body' => $body_parameters
         ]);
     }
 
