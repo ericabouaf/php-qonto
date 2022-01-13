@@ -1,4 +1,4 @@
-Qonto API client for PHP [![Build Status](https://travis-ci.org/neyric/php-qonto.svg?branch=master)](https://travis-ci.org/neyric/php-qonto) [![Latest Stable Version](https://poser.pugx.org/neyric/php-qonto/v/stable)](https://packagist.org/packages/neyric/php-qonto) [![Total Downloads](https://poser.pugx.org/neyric/php-qonto/downloads)](https://packagist.org/packages/neyric/php-qonto) [![License](https://poser.pugx.org/neyric/php-qonto/license)](https://packagist.org/packages/neyric/php-qonto)
+Qonto API client for PHP [![Build Status](https://travis-ci.org/ericabouaf/php-qonto.svg?branch=master)](https://travis-ci.org/ericabouaf/php-qonto) [![Latest Stable Version](https://poser.pugx.org/neyric/php-qonto/v/stable)](https://packagist.org/packages/neyric/php-qonto) [![Total Downloads](https://poser.pugx.org/neyric/php-qonto/downloads)](https://packagist.org/packages/neyric/php-qonto) [![License](https://poser.pugx.org/neyric/php-qonto/license)](https://packagist.org/packages/neyric/php-qonto)
 =================================================
 
 neyric/php-qonto is an unofficial PHP client library to work with [Qonto REST API v2](https://api-doc.qonto.eu/).
@@ -27,7 +27,7 @@ neyric/php-qonto is distributed under MIT license, see the [LICENSE file](https:
 
 Contacts
 -------------------------------------------------
-Report bugs or suggest features using [issue tracker on GitHub](https://github.com/neyric/php-qonto).
+Report bugs or suggest features using [issue tracker on GitHub](https://github.com/ericabouaf/php-qonto).
 
 
 Configuration
