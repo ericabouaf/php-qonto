@@ -53,6 +53,19 @@ var_dump($organization);
 $transactionCollection = $qonto->Transactions->list('bank-account-slug', 'FR76XXXXXXXXXXXXXXXXXXXXXXX');
 var_dump($transactionCollection);
 
+// Fetch the list of transactions with filters
+use neyric\Qonto\Model\TransactionFilterBuilder;
+
+$filters = TransactionFilterBuilder::create()
+            ->status("completed")
+            ->side("credit")
+            ->updatedAtFrom("2019-01-10T11:47:53.123Z")
+            ->updatedAtTo("2021-01-10T11:47:53.123Z")
+            ->attachments();
+
+$transactionCollection = $qonto->Transactions->listFilter('bank-account-slug', 'FR76XXXXXXXXXXXXXXXXXXXXXXX', $filters);
+var_dump($transactionCollection);
+
 // Fetch memberships
 $memberships = $qonto->Memberships->list();
 var_dump($memberships);
@@ -64,5 +77,36 @@ var_dump($labels);
 // Fetch an attachment
 $attachment = $qonto->Attachments->get("some-attachement-id");
 var_dump($attachment);
+
+// Fetch the list of external transfers 
+$externalTransfersCollection = $qonto->ExternalTransers->list();
+var_dump($externalTransfersCollection);
+
+// Fetch the list of external transfers with filters
+use neyric\Qonto\Model\ExternalTransferFilterBuilder;
+use neyric\Qonto\Model\ExternalTransferStatus;
+
+$filters = ExternalTransferFilterBuilder::create()
+            ->beneficary(["0a8df251-de2a-4394-bffc-6b9d9795700d"])
+            ->status(ExternalTransferStatus::PENDING)
+            ->scheduledAtFrom("2022-01-10")
+            ->updatedAtTo("2022-01-27T22:05:07.000Z");
+
+$externalTransfersCollection = $qonto->ExternalTransers->listFilter($filters);
+var_dump($externalTransfersCollection);
+
+// Create an external transfer 
+use neyric\Qonto\Model\ExternalTransferBuilder;
+
+$builder = ExternalTransferBuilder::create()
+            ->beneficaryId("0a8df251-de2a-4394-bffc-6b9d9795700d")
+            ->debitIban("FR7630001007941234567890185")
+            ->currency("EUR")
+            ->note("External transfer for John")
+            ->reference("External transfer reference (ex: John Car)")
+            ->amount(18000.56)
+            ->scheduledDate("2022-02-10");
+            
+$qonto->ExternalTransers->create($builder);
 ```
 

@@ -2,6 +2,7 @@
 
 namespace neyric\Qonto;
 
+use neyric\Qonto\ApiResource\ApiExternalTransfers;
 use neyric\Qonto\Core\ApiClient;
 use neyric\Qonto\Core\ApiSerializer;
 
@@ -54,8 +55,13 @@ class QontoApi
      */
     public $Transactions;
 
+    /**
+     * @var ApiExternalTransfers
+     */
+    public $ExternalTransers;
 
-    public function __construct($login, $secretKey, $baseUrl = 'https://thirdparty.qonto.eu/v2') {
+
+    public function __construct($login, $secretKey, $baseUrl = 'https://thirdparty.qonto.com/v2') {
         $this->login  = $login;
         $this->secretKey = $secretKey;
         $this->baseUrl = $baseUrl;
@@ -71,6 +77,7 @@ class QontoApi
         $this->Memberships = new ApiMemberships($this);
         $this->Organizations = new ApiOrganizations($this);
         $this->Transactions = new ApiTransactions($this);
+        $this->ExternalTransers = new ApiExternalTransfers($this);
     }
 
 }

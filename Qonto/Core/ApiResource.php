@@ -37,6 +37,20 @@ abstract class ApiResource
     }
 
     /**
+     * @param string $path
+     * @param array $bodyParameters
+     *
+     * @return array
+     */
+    protected function post($path, $bodyParameters = []): array
+    {
+        $url = $this->api->baseUrl . $path;
+        $response = $this->api->client->getRequestPOST($url, $bodyParameters);
+
+        return $response->toArray();
+    }
+
+    /**
      * @param array $data
      * @param string $class
      * 
